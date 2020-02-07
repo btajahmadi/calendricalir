@@ -26,9 +26,8 @@ SECRET_KEY = 'uq#$hx07^g2i(y0a9u#rg#c=-#l+@&en_5pp#r*#w(hih0+mfq'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    # '127.0.0.1:8000',
-    # 'dev.calendrical.ir',
-
+    '127.0.0.1',
+    'dev.calendrical.ir',
 ]
 
 
@@ -36,6 +35,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
+    'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,7 +59,9 @@ ROOT_URLCONF = 'calendricalir.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,5 +123,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
 
 STATIC_URL = '/static/'

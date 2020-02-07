@@ -1,5 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect
 
 
 def index(request):
-    return HttpResponse('Hello again!')
+    # return render(request, "pages/index.html")
+    return redirect('/blog')
