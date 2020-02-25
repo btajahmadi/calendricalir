@@ -87,7 +87,8 @@ DATABASES = {
         'USER' : 'postgres',
         'PASSWORD' : 'obst@1354',
         'HOST' : '127.0.0.1',
-        'PORT' : '5432'
+        # 'PORT' : '5432', # Home laptop
+        'PORT' : '4000' # Office PC
     }
 }
 
